@@ -1,14 +1,28 @@
-import React from 'react';
-import Banner from './Banner';
-import WhyChooseUs from './WhyChooseUs';
+import React from "react";
+import Banner from "./Banner";
+import WhyChooseUs from "./WhyChooseUs";
+import SpecialOffers from "./SpecialOffers";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
-    return (
-        <div>
-            <Banner></Banner>
-            <WhyChooseUs></WhyChooseUs>
-        </div>
-    );
+  return (
+    <div>
+      <Banner></Banner>
+      <WhyChooseUs></WhyChooseUs>
+      {/* testimonial section start here */}
+      <div
+        className="bg-fixed  w-full  bg-cover bg-center"
+        style={{
+          backgroundImage:
+            'url("https://i.pinimg.com/736x/07/8e/a5/078ea578bab61461d205de7516afe3b8.jpg")',
+        }}
+      >
+        <Testimonials></Testimonials>
+      </div>
+
+      <SpecialOffers></SpecialOffers>
+    </div>
+  );
 };
 
 export default Home;
