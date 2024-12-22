@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Registration = () => {
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, signOutUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -32,8 +32,15 @@ const Registration = () => {
       .then((result) => {
         console.log(result.user);
         e.target.reset();
-        navigate("/");
-        toast.success("Sign Up is successful");
+        // after account created successful--> SignOutUser and redirects to the login page.
+        signOutUser()
+          .then(() => {
+          navigate("/login");
+          toast.success("Your Account created successful. Please Login Now !");
+          })
+          .catch((error) => {
+          console.log("ERROR:", error);
+        })
       })
       .catch((error) => {
         console.log(error.message);

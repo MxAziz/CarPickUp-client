@@ -14,6 +14,7 @@ import AvailableCars from './Pages/AvailableCarsPage/AvailableCars.jsx';
 import AddCar from './Pages/AddCarPage/AddCar.jsx';
 import MyCars from './Pages/MyCarsPage/MyCars.jsx';
 import MyBookings from './Pages/MyBookingsPage/MyBookings.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,34 +23,46 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/availableCars',
-        element: <AvailableCars></AvailableCars>
+        path: "/availableCars",
+        element: <AvailableCars></AvailableCars>,
       },
       {
-        path: '/addCar',
-        element: <AddCar></AddCar>
+        path: "/addCar",
+        element: (
+          <PrivateRoute>
+            <AddCar></AddCar>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/myCars',
-        element: <MyCars></MyCars>
+        path: "/myCars",
+        element: (
+          <PrivateRoute>
+            <MyCars></MyCars>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/myBookings',
-        element: <MyBookings></MyBookings>
+        path: "/myBookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/registration',
-        element: <Registration></Registration>
-      }
-    ]
+        path: "/registration",
+        element: <Registration></Registration>,
+      },
+    ],
   },
 ]);
 
