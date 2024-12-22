@@ -82,23 +82,21 @@ const Navbar = () => {
         <div className="navbar-end ">
           {user ? (
             <>
-              <div className="flex justify-center items-center gap-2">
-                <div className="">
-                  <a onClick={handleLogOut} className="btn font-bold ">
-                    Log Out
-                  </a>
-                </div>
+              <div className="">
+                <a
+                  onClick={handleLogOut}
+                  className="px-4 py-2  border-2 border-black hover:bg-[#232425] hover:text-white text-lg font-bold rounded-md shadow-lg transition-all duration-300 "
+                >
+                  Log Out
+                </a>
               </div>
             </>
           ) : (
             <>
-              <div className=" space-x-4">
-                <button>
-                  <NavLink to={"/login"}>Login</NavLink>
-                </button>
-                <NavLink to={"/registration"}>
-                  <button className="btn btn-neutral font-bold">
-                    Resister
+              <div className="">
+                <NavLink to={"/login"}>
+                  <button className="px-4 py-2  border-2 border-black hover:bg-[#232425] hover:text-white text-lg font-bold rounded-md shadow-lg transition-all duration-300">
+                    Login
                   </button>
                 </NavLink>
               </div>
