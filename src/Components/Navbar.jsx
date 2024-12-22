@@ -1,7 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+    const { user, signOutUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+      signOutUser()
+        .then(() => {
+          navigate("/");
+          toast.success("Sign out successful");
+        })
+        .catch((error) => {
+          console.log("ERROR:", error);
+        });
+    };
   // navbar links
   const links = (
     <>
@@ -9,9 +24,9 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/allReviews"}>All Reviews</NavLink>
+        <NavLink to={"/allReviews"}>Available Cars</NavLink>
       </li>
-      {/* {user && (
+      {user && (
         <>
           <li>
             <NavLink to={"/addReview"}>Add Review</NavLink>
@@ -23,7 +38,7 @@ const Navbar = () => {
             <NavLink to={"/gameWatchList"}>Game WatchList</NavLink>
           </li>
         </>
-      )} */}
+      )}
     </>
   );
 
@@ -52,54 +67,43 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {links}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">
-            <img className="size-14  " src="/Car-Logo.png" alt="" /> <span className='font-bold'>CarPickUp</span>
+            <img className="size-14  " src="/Car-Logo.png" alt="" />{" "}
+            <span className="font-bold">CarPickUp</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        {/* authentication condition */}
+        <div className="navbar-end ">
+          {user ? (
+            <>
+              <div className="flex justify-center items-center gap-2">
+                <div className="">
+                  <a onClick={handleLogOut} className="btn font-bold ">
+                    Log Out
+                  </a>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className=" space-x-4">
+                <button>
+                  <NavLink to={"/login"}>Login</NavLink>
+                </button>
+                <NavLink to={"/registration"}>
+                  <button className="btn btn-neutral font-bold">
+                    Resister
+                  </button>
+                </NavLink>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
