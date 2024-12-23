@@ -6,7 +6,7 @@ const SpecialOffers = () => {
       title: "Get 15% off for weekend rentals!",
       description:
         "Book your car for the weekend and enjoy a 15% discount on your rental.",
-      buttonText: "Learn More",
+      buttonText: "Book Now",
     },
     {
       title: "Luxury cars at $99/day this holiday season!",

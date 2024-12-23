@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`p-6 ${feature.color} rounded-lg shadow-md text-center`}
+              className={`p-6 ${feature.color} rounded-lg shadow-md text-center transform  hover:scale-105 transition-transform duration-300`}
             >
               <div className="mb-4 ">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -58,5 +58,8 @@ const WhyChooseUs = () => {
     </section>
   );
 };
+
+// reusable transform style--->
+// transform  hover:scale-105 transition-transform duration-300
 
 export default WhyChooseUs;
