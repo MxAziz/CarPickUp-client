@@ -23,8 +23,8 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="container md:w-3/4 mx-auto p-6 ">
-      <div className="card shadow-lg bg-white p-6">
+    <div className="container bg-gray-100 p-6 ">
+      <div className="card shadow-lg md:w-3/5 mx-auto bg-white p-6">
         <img
           src={car.imageUrl}
           alt={car.model}

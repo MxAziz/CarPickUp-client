@@ -1,6 +1,6 @@
 // AvailableCars.jsx
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const AvailableCars = () => {
   const [cars, setCars] = useState([]);
@@ -51,7 +51,10 @@ const AvailableCars = () => {
             value={searchQuery}
             onChange={handleSearch}
           />
-          <button className="btn bg-[#136b7a] hover:bg-[#232525] text-white" type="submit">
+          <button
+            className="btn bg-[#136b7a] hover:bg-[#232525] text-white"
+            type="submit"
+          >
             Search
           </button>
         </div>
@@ -92,17 +95,19 @@ const AvailableCars = () => {
             <img
               src={car.imageUrl}
               alt={car.model}
-              className="w-full h-48 object-cover mb-4 rounded-br-[80px] "
+              className="w-full h-48 object-cover mb-4 rounded-br-[70px] "
             />
             <h3 className="font-bold text-lg">{car.model}</h3>
             <p>Location: {car.location}</p>
             <p>Price: ${car.dailyRentalPrice}/day</p>
-            <button
-              onClick={() => navigate(`/carDetails/${car._id}`)}
-              className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
-            >
-              Book Now
-            </button>
+            {/* <NavLink to={`/cars/${car._id}`}> */}
+              <button
+                  onClick={() => navigate(`/carDetails/${car._id}`)}
+                className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
+              >
+                Book Now
+              </button>
+            {/* </NavLink> */}
           </div>
         ))}
       </div>

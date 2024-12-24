@@ -3,12 +3,14 @@ import Banner from "./Banner";
 import WhyChooseUs from "./WhyChooseUs";
 import SpecialOffers from "./SpecialOffers";
 import Testimonials from "./Testimonials";
+import RecentListings from "./RecentListings";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <WhyChooseUs></WhyChooseUs>
+      <RecentListings></RecentListings>
       {/* testimonial section start here */}
       <div
         className="bg-fixed  w-full  bg-cover bg-center"
