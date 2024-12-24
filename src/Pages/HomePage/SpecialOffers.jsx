@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SpecialOffers = () => {
   const offers = [
@@ -31,9 +32,11 @@ const SpecialOffers = () => {
             >
               <h3 className="text-2xl font-semibold mb-4">{offer.title}</h3>
               <p className="text-gray-600 mb-6">{offer.description}</p>
-              <button className="px-6 py-3 bg-[#232425] hover:bg-[#113a60] text-white text-lg font-semibold rounded-md">
-                {offer.buttonText}
-              </button>
+              <NavLink to={"/availableCars"}>
+                <button className="px-6 py-3 bg-[#136b7a] hover:bg-[#232525] text-white text-lg font-semibold rounded-md">
+                  {offer.buttonText}
+                </button>
+              </NavLink>
             </div>
           ))}
         </div>

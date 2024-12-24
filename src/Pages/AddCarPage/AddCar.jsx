@@ -87,10 +87,9 @@ const AddCar = () => {
             )
         )}
 
-
         <button
           type="submit"
-          className="btn bg-[#232425] text-white font-bold hover:bg-[#113a60] w-full"
+          className="btn bg-[#136b7a] hover:bg-[#232525] text-white text-lg  w-full"
         >
           Submit
         </button>

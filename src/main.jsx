@@ -15,6 +15,7 @@ import AddCar from './Pages/AddCarPage/AddCar.jsx';
 import MyCars from './Pages/MyCarsPage/MyCars.jsx';
 import MyBookings from './Pages/MyBookingsPage/MyBookings.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import CarDetails from './Pages/AvailableCarsPage/CarDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,15 @@ const router = createBrowserRouter([
       {
         path: "/availableCars",
         element: <AvailableCars></AvailableCars>,
+      },
+      {
+        path: "/carDetails/:id",
+        element: (
+          <PrivateRoute>
+            <CarDetails></CarDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
       },
       {
         path: "/addCar",

@@ -19,7 +19,7 @@ const Banner = () => {
           Drive Your Dreams Today!
         </h1>
         <NavLink to={"/availableCars"}>
-          <button className="px-8 py-4 border-2 hover:bg-[#113a60] text-white text-xl font-bold rounded-md shadow-lg transition-all duration-300">
+          <button className="px-8 py-4 border-2 hover:bg-[#136b7a] text-white text-xl font-bold rounded-md shadow-lg transition-all duration-300">
             View Available Cars
           </button>
         </NavLink>

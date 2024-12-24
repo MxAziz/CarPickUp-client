@@ -1,11 +1,13 @@
 // AvailableCars.jsx
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AvailableCars = () => {
   const [cars, setCars] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [viewType, setViewType] = useState("grid");
-  const [sortOption, setSortOption] = useState("");
+    const [sortOption, setSortOption] = useState("");
+    const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5000/cars")
@@ -41,13 +43,18 @@ const AvailableCars = () => {
   return (
     <div className="p-6">
       <div className="flex justify-between mb-4">
-        <input
-          type="text"
-          placeholder="Search by model or location"
-          className="input input-bordered w-full max-w-sm"
-          value={searchQuery}
-          onChange={handleSearch}
-        />
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Search by model or location"
+            className="input input-bordered  border-cyan-600 w-full max-w-sm"
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+          <button className="btn bg-[#136b7a] hover:bg-[#232525] text-white" type="submit">
+            Search
+          </button>
+        </div>
 
         <div>
           <select
@@ -63,7 +70,7 @@ const AvailableCars = () => {
           </select>
 
           <button
-            className="btn bg-[#1b5f9f] hover:bg-[#2a2b2d] text-white"
+            className="btn bg-[#136b7a] hover:bg-[#2a2b2d] text-white"
             onClick={() => setViewType(viewType === "grid" ? "list" : "grid")}
           >
             {viewType === "grid"
@@ -85,12 +92,15 @@ const AvailableCars = () => {
             <img
               src={car.imageUrl}
               alt={car.model}
-              className="w-full h-32 object-cover mb-4 rounded-br-[80px] "
+              className="w-full h-48 object-cover mb-4 rounded-br-[80px] "
             />
             <h3 className="font-bold text-lg">{car.model}</h3>
             <p>Location: {car.location}</p>
             <p>Price: ${car.dailyRentalPrice}/day</p>
-            <button className="btn bg-[#1b5f9f] hover:bg-[#232425] text-white mt-4">
+            <button
+              onClick={() => navigate(`/carDetails/${car._id}`)}
+              className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
+            >
               Book Now
             </button>
           </div>
