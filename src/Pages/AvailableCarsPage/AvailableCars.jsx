@@ -87,16 +87,16 @@ const AvailableCars = () => {
         className={
           viewType === "grid"
             ? "grid grid-cols-1 md:grid-cols-3 gap-4"
-            : "space-y-4"
+            : "space-y-4 "
         }
       >
         {filteredCars.map((car) => (
           <div key={car._id} className="card bg-gray-100 shadow-md p-4">
-            <div className="overflow-hidden h-48 relative group  rounded-br-[70px]">
+            <div className="overflow-hidden h-48 relative group rounded-t-lg rounded-br-[70px]">
               <img
                 src={car.imageUrl}
                 alt={car.model}
-                className="w-full h-full object-cover mb-4 transition-transform duration-300  group-hover:scale-110 "
+                className="w-full h-full  object-cover mb-4 transition-transform duration-300  group-hover:scale-110 "
               />
             </div>
             {/* <img

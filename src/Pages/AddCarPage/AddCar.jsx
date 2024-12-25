@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from './../../Provider/AuthProvider';
 
 const AddCar = () => {
+  const { user } = useContext(AuthContext);
   const [carData, setCarData] = useState({
     model: "",
     dailyRentalPrice: "",
@@ -14,7 +16,7 @@ const AddCar = () => {
     bookingCount: 0,
     imageUrl: "",
     location: "",
-    user: "",
+    userEmail: `${user.email}`,
     dateAdded: new Date().toISOString(),
     bookingStatus: "Available",
   });
