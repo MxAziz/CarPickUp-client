@@ -92,21 +92,28 @@ const AvailableCars = () => {
       >
         {filteredCars.map((car) => (
           <div key={car._id} className="card bg-gray-100 shadow-md p-4">
-            <img
+            <div className="overflow-hidden h-48 relative group  rounded-br-[70px]">
+              <img
+                src={car.imageUrl}
+                alt={car.model}
+                className="w-full h-full object-cover mb-4 transition-transform duration-300  group-hover:scale-110 "
+              />
+            </div>
+            {/* <img
               src={car.imageUrl}
               alt={car.model}
               className="w-full h-48 object-cover mb-4 rounded-br-[70px] "
-            />
+            /> */}
             <h3 className="font-bold text-lg">{car.model}</h3>
             <p>Location: {car.location}</p>
             <p>Price: ${car.dailyRentalPrice}/day</p>
             {/* <NavLink to={`/cars/${car._id}`}> */}
-              <button
-                  onClick={() => navigate(`/carDetails/${car._id}`)}
-                className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
-              >
-                Book Now
-              </button>
+            <button
+              onClick={() => navigate(`/carDetails/${car._id}`)}
+              className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
+            >
+              Book Now
+            </button>
             {/* </NavLink> */}
           </div>
         ))}
