@@ -9,7 +9,7 @@ const AvailableCars = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/cars")
+    fetch("https://car-pick-up-server.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => setCars(data))
       .catch((error) => console.error("Error fetching cars:", error));

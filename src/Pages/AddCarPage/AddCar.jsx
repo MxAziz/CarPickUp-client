@@ -31,7 +31,7 @@ const AddCar = () => {
   const handleAddCar = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/cars", {
+    const response = await fetch("https://car-pick-up-server.vercel.app/cars", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

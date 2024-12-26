@@ -12,7 +12,7 @@ const CarDetails = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${id}`)
+    fetch(`https://car-pick-up-server.vercel.app/cars/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data))
       .catch((error) => console.error("Error fetching car details:", error));
@@ -38,7 +38,7 @@ const CarDetails = () => {
       userEmail: user.email,
     };
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://car-pick-up-server.vercel.app/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bookingDetails),

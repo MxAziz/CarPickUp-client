@@ -24,7 +24,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/bookings/${user.email}`)
+      fetch(`https://car-pick-up-server.vercel.app/bookings/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setBookings(data);
@@ -63,7 +63,7 @@ const MyBookings = () => {
       confirmButtonText: "Yes, cancel it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://car-pick-up-server.vercel.app/bookings/${id}`, {
           method: "DELETE",
         })
           .then(() => {
@@ -86,7 +86,7 @@ const MyBookings = () => {
 
       const confirmModifyDate = () => {
         if (selectedBooking) {
-          fetch(`http://localhost:5000/bookings/${selectedBooking._id}`, {
+          fetch(`https://car-pick-up-server.vercel.app/bookings/${selectedBooking._id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
@@ -270,7 +270,7 @@ export default MyBookings;
 //     try {
 //       if (user?.email) {
 //         const response = await fetch(
-//           `http://localhost:5000/bookings/${user.email}`
+//           `https://car-pick-up-server.vercel.app/bookings/${user.email}`
 //         );
 //         const data = await response.json();
 
@@ -328,7 +328,7 @@ export default MyBookings;
 
 //     if (confirmResult.isConfirmed) {
 //       try {
-//         await fetch(`http://localhost:5000/bookings/${id}`, {
+//         await fetch(`https://car-pick-up-server.vercel.app/bookings/${id}`, {
 //           method: "DELETE",
 //         });
 //         setBookings((prev) => prev.filter((booking) => booking._id !== id));
@@ -373,7 +373,7 @@ export default MyBookings;
 
 //     try {
 //       const response = await fetch(
-//         `http://localhost:5000/bookings/${selectedBooking._id}`,
+//         `https://car-pick-up-server.vercel.app/bookings/${selectedBooking._id}`,
 //         {
 //           method: "PUT",
 //           headers: { "Content-Type": "application/json" },

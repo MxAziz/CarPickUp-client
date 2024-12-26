@@ -6,7 +6,7 @@ const RecentListings = () => {
   useEffect(() => {
     const fetchRecentCars = async () => {
       try {
-        const response = await fetch("http://localhost:5000/cars/recent");
+        const response = await fetch("https://car-pick-up-server.vercel.app/cars/recent");
         if (!response.ok) {
           throw new Error("Failed to fetch recent cars");
         }

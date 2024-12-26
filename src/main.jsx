@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             <CarDetails></CarDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+        loader: ({ params }) => fetch(`https://car-pick-up-server.vercel.app/cars/${params.id}`),
       },
       {
         path: "/addCar",

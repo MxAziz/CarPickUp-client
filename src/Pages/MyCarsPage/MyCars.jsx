@@ -14,7 +14,7 @@ const MyCars = () => {
   const fetchCars = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/myCars/${user?.email}`
+        `https://car-pick-up-server.vercel.app/myCars/${user?.email}`
       );
       setCars(response.data);
       setIsLoading(false);
@@ -40,7 +40,7 @@ const handleDelete = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/cars/${id}`);
+        await axios.delete(`https://car-pick-up-server.vercel.app/cars/${id}`);
         setCars(cars.filter((car) => car._id !== id));
         Swal.fire("Deleted!", "Your car has been deleted.", "success");
       } catch (error) {
@@ -71,7 +71,7 @@ const handleDelete = async (id) => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/cars/${selectedCar._id}`,
+        `https://car-pick-up-server.vercel.app/cars/${selectedCar._id}`,
         selectedCar
       );
       console.log(response);
