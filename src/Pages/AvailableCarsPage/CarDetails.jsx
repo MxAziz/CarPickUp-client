@@ -1,12 +1,15 @@
 // CarDetails.jsx
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const CarDetails = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`http://localhost:5000/cars/${id}`)
@@ -17,13 +20,44 @@ const CarDetails = () => {
 
   if (!car) return <p>Loading...</p>;
 
-  const handleBooking = () => {
-    // Navigate to booking confirmation page or handle booking logic
-    setShowModal(true);
+
+  // const handleBooking = () => {
+  //   console.log('before click:',showModal);
+  //   setShowModal(true);
+  //   console.log('after click:',showModal);
+  // };
+
+  const confirmBooking = () => {
+    const bookingDetails = {
+      carId: id,
+      model: car.model,
+      imageUrl: car.imageUrl,
+      bookingDate: new Date().toISOString(),
+      dailyRentalPrice: car.dailyRentalPrice,
+      status: "confirmed",
+      userEmail: user.email,
+    };
+
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(bookingDetails),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Booking Confirmed",
+          text: "Your booking has been confirmed successfully.",
+        });
+        setShowModal(false);
+        navigate("/myBookings");
+      })
+      .catch((error) => console.error("Error confirming booking:", error));
   };
 
   return (
-    <div className="container bg-gray-100 p-6 ">
+    <div className="container bg-gray-100 p-6">
       <div className="card shadow-lg md:w-3/5 mx-auto bg-white p-6">
         <img
           src={car.imageUrl}
@@ -39,20 +73,21 @@ const CarDetails = () => {
         <p className="mb-4">Description: {car.description}</p>
         <button
           className="btn bg-[#136b7a] hover:bg-[#2a2b2d] text-white"
-          onClick={handleBooking}
+          onClick={() => {
+            setShowModal(true);
+            console.log("after click:", showModal);
+          }}
         >
           Book Now
         </button>
       </div>
 
       {showModal && (
-        <div className="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="modal-content bg-white p-6 rounded shadow-lg">
             <h3 className="text-xl font-bold mb-4">Booking Confirmation</h3>
             <p className="mb-2">Car: {car.model}</p>
             <p className="mb-2">Price per Day: ${car.dailyRentalPrice}</p>
-            <p className="mb-2">Location: {car.location}</p>
-            <p className="mb-4">Features: {car.features}</p>
             <div className="flex justify-end">
               <button
                 className="btn btn-secondary mr-2"
@@ -60,14 +95,7 @@ const CarDetails = () => {
               >
                 Cancel
               </button>
-              <button
-                className="btn btn-primary"
-                onClick={() => {
-                  // Add booking logic here
-                  setShowModal(false);
-                  navigate("/confirmation");
-                }}
-              >
+              <button className="btn btn-primary" onClick={confirmBooking}>
                 Confirm
               </button>
             </div>
