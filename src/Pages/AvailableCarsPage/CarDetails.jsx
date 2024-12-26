@@ -84,18 +84,21 @@ const CarDetails = () => {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="modal-content bg-white p-6 rounded shadow-lg">
+          <div className="modal-content bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">Booking Confirmation</h3>
             <p className="mb-2">Car: {car.model}</p>
             <p className="mb-2">Price per Day: ${car.dailyRentalPrice}</p>
-            <div className="flex justify-end">
+            <div className="flex justify-center mt-4">
               <button
                 className="btn btn-secondary mr-2"
                 onClick={() => setShowModal(false)}
               >
                 Cancel
               </button>
-              <button className="btn btn-primary" onClick={confirmBooking}>
+              <button
+                className="btn bg-[#136b7a] hover:bg-[#1d8092] text-white"
+                onClick={confirmBooking}
+              >
                 Confirm
               </button>
             </div>

@@ -11,6 +11,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { SlCalender } from "react-icons/sl";
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -102,7 +103,7 @@ const MyBookings = () => {
                 <img
                   src={booking.imageUrl}
                   alt={booking.model}
-                  className="w-16 h-16"
+                  className="w-16 h-16 mx-auto"
                 />
               </td>
               <td className="border p-2">{booking.model}</td>
@@ -116,6 +117,7 @@ const MyBookings = () => {
                   className="btn bg-blue-500 text-white mr-2"
                   onClick={() => console.log("Modify Booking")}
                 >
+                  <SlCalender />
                   Modify Date
                 </button>
                 <button
@@ -132,7 +134,7 @@ const MyBookings = () => {
       </table>
 
       {/* Booking Statistics */}
-      <div className="mt-8 my-12">
+      <div className="my-16 ">
         <h3 className="text-xl font-bold mb-4 text-center">
           Booking Statistics
         </h3>
