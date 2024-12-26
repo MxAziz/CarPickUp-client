@@ -1,8 +1,30 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CarPickUp - Client
 
-Currently, two official plugins are available:
+## Purpose
+This client-side application provides an intuitive user interface for a car rental service. Users can view car details, make bookings, and manage their existing bookings seamlessly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+[Car Rental Service Live](#)
+*(Add the deployed live link once available)*
+
+## Key Features
+- **Car Details Page**: View car information and confirm bookings.
+- **My Bookings Page**: View, modify, or cancel bookings with a dynamic and interactive table.
+- **Booking Count Visualization**: Dynamic charts showcasing booking trends.
+- **Responsive Design**: Mobile-first approach using Tailwind CSS.
+
+## Technologies Used
+- **React.js**: Frontend library for building user interfaces.
+- **React Router**: For client-side routing.
+- **Tailwind CSS**: For responsive styling.
+- **DaisyUI**: Pre-styled components for UI design.
+- **React Icons**: For vector icons.
+- **SweetAlert2**: For modern alert modals.
+- **Recharts**: For data visualization.
+
+## Installation and Setup
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd client
