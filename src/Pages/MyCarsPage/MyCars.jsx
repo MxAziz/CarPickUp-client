@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyCars = () => {
@@ -27,18 +28,28 @@ const MyCars = () => {
     fetchCars();
   }, [user?.email]);
 
-  const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this car?")) {
+const handleDelete = async (id) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You want to delete this car!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Yes, delete it!",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
       try {
         await axios.delete(`http://localhost:5000/cars/${id}`);
         setCars(cars.filter((car) => car._id !== id));
-        toast.success("Car deleted successfully!");
+        Swal.fire("Deleted!", "Your car has been deleted.", "success");
       } catch (error) {
         console.error(error);
-        toast.error("Failed to delete the car!");
+        Swal.fire("Error!", "Failed to delete the car.", "error");
       }
     }
-  };
+  });
+};
 
   const handleSort = (option) => {
     setSortOption(option);
@@ -147,13 +158,13 @@ const MyCars = () => {
                   </td>
                   <td className="border p-2">
                     <button
-                      className="bg-[#136b7a] hover:bg-[#232525] text-white px-3 py-1 mr-2"
+                      className="bg-[#136b7a] hover:bg-[#232525] text-white rounded-md px-3 py-1 mr-2"
                       onClick={() => setSelectedCar(car)}
                     >
                       Update
                     </button>
                     <button
-                      className="bg-red-500 hover:bg-[#232525] text-white px-3 py-1"
+                      className="bg-red-500 hover:bg-[#232525] text-white rounded-md px-3 py-1"
                       onClick={() => handleDelete(car._id)}
                     >
                       Delete
