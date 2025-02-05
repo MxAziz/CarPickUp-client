@@ -5,7 +5,7 @@
 This client-side application provides an intuitive user interface for a car rental service. Users can view car details, make bookings, and manage their existing bookings seamlessly.
 
 ## Live URL
-[Car Rental Service Live](#)
+[Car Rental Service Live](https://carpickup0.web.app/)
 *(Add the deployed live link once available)*
 
 ## Key Features
@@ -26,5 +26,5 @@ This client-side application provides an intuitive user interface for a car rent
 ## Installation and Setup
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd client
+   git clone https://github.com/MxAziz/CarPickUp-client.git
+   cd CarPickUp-client
