@@ -5,8 +5,7 @@
 This client-side application provides an intuitive user interface for a car rental service. Users can view car details, make bookings, and manage their existing bookings seamlessly.
 
 ## Live URL
-[Car Rental Service Live](https://carpickup0.web.app/)
-*(Add the deployed live link once available)*
+[CarPickUp Live](https://carpickup0.web.app/)
 
 ## Key Features
 - **Car Details Page**: View car information and confirm bookings.
