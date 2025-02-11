@@ -78,20 +78,22 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={true}
-        draggable={true}
-        pauseOnHover={true}
-        theme="colored"
-      />
-    </AuthProvider>
+    <div className="max-w-screen-2xl mx-auto">
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={true}
+          draggable={true}
+          pauseOnHover={true}
+          theme="colored"
+        />
+      </AuthProvider>
+    </div>
   </StrictMode>
 );

@@ -1,11 +1,31 @@
 import React, { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+
+    useEffect(() => {
+      if (location.pathname !== "/") {
+        setScrolled(true);
+        return;
+      }
+
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, [location.pathname]);
 
     const handleLogOut = () => {
       signOutUser()
@@ -44,7 +64,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div
+        className={`navbar max-w-screen-2xl mx-auto w-full  fixed top-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-[#232425] text-white" : "bg-transparent text-white"
+        }`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,22 +94,22 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <img className="size-14  " src="/Car-Logo.png" alt="" />{" "}
-            <span className="font-bold">CarPickUp</span>
+          <a href="/" className="btn btn-ghost text-xl">
+            {/* <img className="size-14  " src="/Car-Logo.png" alt="" /> */}
+            <span className="font-bold">CARPICKUP</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         {/* authentication condition */}
-        <div className="navbar-end ">
+        <div className="navbar-end mr-4">
           {user ? (
             <>
               <div className="">
                 <a
                   onClick={handleLogOut}
-                  className="px-4 py-2  border-2 border-black hover:bg-[#232425] hover:text-white text-lg font-bold rounded-md shadow-lg transition-all duration-300 "
+                  className="px-4 py-2 text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300 "
                 >
                   Log Out
                 </a>
@@ -95,7 +119,7 @@ const Navbar = () => {
             <>
               <div className="">
                 <NavLink to={"/login"}>
-                  <button className="px-4 py-2  border-2 border-black hover:bg-[#232425] hover:text-white text-lg font-bold rounded-md shadow-lg transition-all duration-300">
+                  <button className="px-4 py-2 text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300">
                     Login
                   </button>
                 </NavLink>

@@ -44,7 +44,7 @@ const AvailableCars = () => {
     });
 
   return (
-    <div className="p-6">
+    <div className="p-6 mt-28">
       <div className="flex justify-between mb-4">
         <div className="flex gap-2">
           <input
