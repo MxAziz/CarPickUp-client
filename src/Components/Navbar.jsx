@@ -90,7 +90,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content p-8 dark:bg-gray-900 bg-base-100 text-black dark:text-white rounded-box z-[1] mt-3 w-52 shadow"
             >
               {links}
             </ul>
@@ -111,7 +111,7 @@ const Navbar = () => {
               <div className="">
                 <a
                   onClick={handleLogOut}
-                  className="px-4 py-2 text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300 "
+                  className="px-4 py-2 cursor-pointer text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300 "
                 >
                   Log Out
                 </a>
@@ -121,7 +121,7 @@ const Navbar = () => {
             <>
               <div className="">
                 <NavLink to={"/login"}>
-                  <button className="px-4 py-2 text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300">
+                  <button className="px-4 py-2 cursor-pointer text-white bg-[#136b7a]  hover:bg-[#165560] font-bold rounded-md shadow-lg transition-all duration-300">
                     Login
                   </button>
                 </NavLink>

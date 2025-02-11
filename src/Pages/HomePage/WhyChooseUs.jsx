@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
     {
       icon: <FaCar className="text-4xl text-blue-500 mx-auto" />,
       title: "Wide Variety of Cars",
-      color: "bg-[#E7C1D3]",
+      color: "bg-[#E7C1D3] ",
       description:
         "From budget-friendly options to luxury vehicles, we have it all.",
     },
@@ -36,9 +36,9 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-100 dark:bg-gray-800 dark:text-white">
+    <section className="py-16 bg-gray-100 dark:bg-[#232425]">
       <div className="container mx-auto px-6  ">
-        <h2 className="text-3xl md:text-4xl font-bold   text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold dark:text-white  text-center mb-12">
           Why Choose Us?
         </h2>
         {/* 4 card  */}
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
             >
               <div className="mb-4 ">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-gray-600 ">{feature.description}</p>
             </div>
           ))}
         </div>
