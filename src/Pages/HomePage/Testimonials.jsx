@@ -73,12 +73,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-6">
-        <p className=" text-center mx-auto">
-          <small className=" ">
-            T E S T I M O N I A L S
-          </small>
+    <section className="py-28 ">
+      <div className="container mx-auto lg:px-8 overflow-hidden">
+        <p className=" text-center mx-auto ">
+          <small className=" ">T E S T I M O N I A L S</small>
         </p>
         <h2 className="text-3xl md:text-4xl text-white font-bold text-center mb-12">
           What Our Clients Say ?
@@ -88,7 +86,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex flex-col   items-center text-center bg-white p-6 rounded-lg shadow-lg mx-4 h-[220px]"
+                className="flex flex-col   items-center text-center bg-white dark:bg-[#232425] p-6 rounded-lg shadow-lg mx-4 h-[220px]"
               >
                 <div className="flex gap-4 items-center">
                   <img
@@ -97,7 +95,7 @@ const Testimonials = () => {
                     className="w-24 h-24 rounded-full mb-4"
                   />
                   <div className="">
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl dark:text-gray-50 font-semibold mb-2">
                       {testimonial.name}
                     </h3>
                     {/* using Ai for implement rating */}
@@ -110,7 +108,7 @@ const Testimonials = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">{testimonial.review}</p>
+                <p className="text-gray-600 dark:text-gray-200">{testimonial.review}</p>
               </div>
             ))}
           </Slider>

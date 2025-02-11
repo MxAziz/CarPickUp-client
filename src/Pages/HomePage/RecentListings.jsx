@@ -22,7 +22,7 @@ const RecentListings = () => {
 
   return (
     <div className=" dark:dark:bg-[#323538]">
-      <div className=" mx-auto py-28 lg:w-11/12 ">
+      <div className=" mx-auto py-28 w-11/12 ">
         <h2 className="text-3xl md:text-4xl font-bold text-center py-4 dark:text-gray-50 mb-12">
           Recent Listings
         </h2>
@@ -35,7 +35,7 @@ const RecentListings = () => {
               <img
                 src={car.imageUrl}
                 alt={car.model}
-                className="w-full h-48 object-cover rounded-br-[70px]"
+                className="w-full h-48 object-cover bg-cover rounded-br-[70px]"
               />
               <div className="p-4">
                 <div className="flex gap-7 items-center">
