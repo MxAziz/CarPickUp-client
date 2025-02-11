@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useState, useEffect } from "react";
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -103,7 +104,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         {/* authentication condition */}
-        <div className="navbar-end mr-4">
+        <div className="navbar-end mr-4 flex gap-4">
+          <ThemeToggle></ThemeToggle>
           {user ? (
             <>
               <div className="">
