@@ -33,7 +33,7 @@ const SpecialOffers = () => {
               <h3 className="text-2xl font-semibold mb-4 dark:text-gray-100">{offer.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">{offer.description}</p>
               <NavLink to={"/availableCars"}>
-                <button className="px-6 py-3 bg-[#136b7a] hover:bg-[#232525] text-white text-lg font-semibold rounded-md">
+                <button className="px-6 py-3 bg-[#136b7a] hover:bg-[#333737] text-white text-lg font-semibold rounded-md">
                   {offer.buttonText}
                 </button>
               </NavLink>
