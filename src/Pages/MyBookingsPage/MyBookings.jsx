@@ -118,76 +118,82 @@ const MyBookings = () => {
       };
 
   return (
-    <div className="container p-6">
-      <h2 className="text-2xl text-center font-bold mb-4">My Bookings</h2>
+    <div className="container p-3 lg:p-6 dark:bg-[#323538]  lg:py-28">
+      <h2 className="text-2xl text-center font-bold mb-4 dark:text-gray-100 pt-28 pb-8">
+        My Bookings
+      </h2>
 
       {/* Booking Table */}
-      <table className="table-auto w-full border-collapse border bg-white shadow-lg">
-        <thead>
-          <tr>
-            <th className="border p-2 bg-cyan-500">Car Image</th>
-            <th className="border p-2 bg-cyan-500">Car Model</th>
-            <th className="border p-2 bg-cyan-500">Booking Date</th>
-            <th className="border p-2 bg-cyan-500">Total Price</th>
-            <th className="border p-2 bg-cyan-500">Status</th>
-            <th className="border p-2 bg-cyan-500">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookings.map((booking, index) => (
-            <tr
-              key={booking._id}
-              className={`hover:bg-blue-100 text-center ${
-                index % 2 === 0 ? "bg-white" : "bg-[#f1fff1]"
-              }`}
-            >
-              <td className="border p-2">
-                <img
-                  src={booking.imageUrl}
-                  alt={booking.model}
-                  className="w-16 h-16 mx-auto"
-                />
-              </td>
-              <td className="border p-2">{booking.model}</td>
-              <td className="border p-2">
-                {new Date(booking.bookingDate).toLocaleString()}
-              </td>
-              <td className="border p-2">${booking.dailyRentalPrice}</td>
-              <td className="border p-2">{booking.status}</td>
-              <td className="border p-2">
-                <button
-                  className="btn bg-blue-500 text-white mr-2"
-                  onClick={() => handleModifyDate(booking)}
-                >
-                  <SlCalender />
-                  Modify Date
-                </button>
-                <button
-                  className="btn bg-red-500 text-white"
-                  onClick={() => handleCancelBooking(booking._id)}
-                >
-                  <IoTrashBinSharp />
-                  Cancel
-                </button>
-              </td>
+      <div className=" overflow-x-auto">
+        <table className="table-auto w-full border-collapse border bg-white  shadow-lg">
+          <thead>
+            <tr>
+              <th className="border p-2 bg-cyan-500">Car Image</th>
+              <th className="border p-2 bg-cyan-500">Car Model</th>
+              <th className="border p-2 bg-cyan-500">Booking Date</th>
+              <th className="border p-2 bg-cyan-500">Total Price</th>
+              <th className="border p-2 bg-cyan-500">Status</th>
+              <th className="border p-2 bg-cyan-500">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bookings.map((booking, index) => (
+              <tr
+                key={booking._id}
+                className={`hover:bg-blue-100 text-center ${
+                  index % 2 === 0
+                    ? "bg-white dark:bg-[#232425] dark:text-white"
+                    : "bg-[#f1fff1] dark:bg-[#232425] dark:text-white"
+                }`}
+              >
+                <td className="border p-2">
+                  <img
+                    src={booking.imageUrl}
+                    alt={booking.model}
+                    className="w-16 h-16 mx-auto"
+                  />
+                </td>
+                <td className="border p-2">{booking.model}</td>
+                <td className="border p-2">
+                  {new Date(booking.bookingDate).toLocaleString()}
+                </td>
+                <td className="border p-2">${booking.dailyRentalPrice}</td>
+                <td className="border p-2">{booking.status}</td>
+                <td className="border p-2">
+                  <button
+                    className="btn border-none bg-[#136b7a] hover:bg-[#323538] text-white mr-2"
+                    onClick={() => handleModifyDate(booking)}
+                  >
+                    <SlCalender />
+                    Modify Date
+                  </button>
+                  <button
+                    className="btn border-none bg-red-500 hover:bg-[#323538] text-white"
+                    onClick={() => handleCancelBooking(booking._id)}
+                  >
+                    <IoTrashBinSharp />
+                    Cancel
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {/* Modify Date Modal */}
       {selectedBooking && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded shadow-lg w-1/3">
+          <div className="bg-white dark:bg-[#232425] dark:text-white p-6 rounded shadow-lg w-1/3">
             <h3 className="text-lg font-bold mb-4">Modify Booking Date</h3>
             <DatePicker
               selected={newDate}
               onChange={(date) => setNewDate(date)}
-              className="border p-2 w-full"
+              className="border p-2 w-full dark:bg-[#232425]"
             />
             <div className="flex justify-end mt-4">
               <button
-                className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+                className="bg-[#136b7a] text-white px-4 py-2 rounded mr-2"
                 onClick={confirmModifyDate}
               >
                 Confirm
@@ -204,8 +210,8 @@ const MyBookings = () => {
       )}
 
       {/* Booking Statistics */}
-      <div className="my-16 ">
-        <h3 className="text-xl font-bold mb-4 text-center">
+      <div className="my-16 dark:text-white ">
+        <h3 className="text-xl font-bold mb-4 text-center dark:text-gray-100">
           Booking Statistics
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -230,7 +236,7 @@ const MyBookings = () => {
               }}
             />
             <Tooltip />
-            <Bar dataKey="count" fill="#82ca9d" />
+            <Bar dataKey="count" fill="#136b7a" />
           </BarChart>
         </ResponsiveContainer>
       </div>

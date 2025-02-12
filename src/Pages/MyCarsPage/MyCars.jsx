@@ -90,7 +90,7 @@ const handleDelete = async (id) => {
   };
 
   return (
-    <div className="p-4 dark:bg-[#323538] dark:text-white py-28 lg:px-7">
+    <div className="p-6 mt-8 dark:bg-[#323538] dark:text-white py-28 lg:px-7">
       <h1 className="text-2xl md:text-3xl text-center font-bold mb-4">
         My Cars
       </h1>
@@ -125,55 +125,57 @@ const handleDelete = async (id) => {
             </select>
           </div>
 
-          <table className="w-full border-collapse border ">
-            <thead>
-              <tr>
-                <th className="border p-2">Car Image</th>
-                <th className="border p-2">Car Model</th>
-                <th className="border p-2">Daily Rental Price</th>
-                <th className="border p-2">Booking Count</th>
-                <th className="border p-2">Availability</th>
-                <th className="border p-2">Date Added</th>
-                <th className="border p-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cars.map((car) => (
-                <tr key={car._id} className="text-center">
-                  <td className="border p-2">
-                    <img
-                      src={car.imageUrl}
-                      alt={car.model}
-                      className="h-16 mx-auto"
-                    />
-                  </td>
-                  <td className="border p-2">{car.model}</td>
-                  <td className="border p-2">${car.dailyRentalPrice}</td>
-                  <td className="border p-2">{car.bookingCount}</td>
-                  <td className="border p-2">
-                    {car.availability ? "Available" : "Unavailable"}
-                  </td>
-                  <td className="border p-2">
-                    {new Date(car.dateAdded).toLocaleDateString()}
-                  </td>
-                  <td className="border p-2">
-                    <button
-                      className="bg-[#136b7a] hover:bg-[#232525] text-white rounded-md px-3 py-1 mr-2"
-                      onClick={() => setSelectedCar(car)}
-                    >
-                      Update
-                    </button>
-                    <button
-                      className="bg-red-500 hover:bg-[#232525] text-white rounded-md px-3 py-1"
-                      onClick={() => handleDelete(car._id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-full border-collapse border overflow-x-auto">
+              <thead>
+                <tr>
+                  <th className="border p-2">Car Image</th>
+                  <th className="border p-2">Car Model</th>
+                  <th className="border p-2">Daily Rental Price</th>
+                  <th className="border p-2">Booking Count</th>
+                  <th className="border p-2">Availability</th>
+                  <th className="border p-2">Date Added</th>
+                  <th className="border p-2">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {cars.map((car) => (
+                  <tr key={car._id} className="text-center">
+                    <td className="border p-2">
+                      <img
+                        src={car.imageUrl}
+                        alt={car.model}
+                        className="h-16 mx-auto"
+                      />
+                    </td>
+                    <td className="border p-2">{car.model}</td>
+                    <td className="border p-2">${car.dailyRentalPrice}</td>
+                    <td className="border p-2">{car.bookingCount}</td>
+                    <td className="border p-2">
+                      {car.availability ? "Available" : "Unavailable"}
+                    </td>
+                    <td className="border p-2">
+                      {new Date(car.dateAdded).toLocaleDateString()}
+                    </td>
+                    <td className="border p-2">
+                      <button
+                        className="bg-[#136b7a] hover:bg-[#232525] text-white rounded-md px-3 py-1 mr-2"
+                        onClick={() => setSelectedCar(car)}
+                      >
+                        Update
+                      </button>
+                      <button
+                        className="bg-red-500 hover:bg-[#232525] text-white rounded-md px-3 py-1"
+                        onClick={() => handleDelete(car._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </>
       )}
 
@@ -323,7 +325,7 @@ const handleDelete = async (id) => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-[#136b7a] hover:bg-gray-600 text-white px-4 py-2 rounded"
               >
                 Save Changes
               </button>
