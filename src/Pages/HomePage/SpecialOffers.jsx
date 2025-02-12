@@ -18,7 +18,7 @@ const SpecialOffers = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:dark:bg-[#323538]">
+    <section className="py-28 bg-gray-50 dark:dark:bg-[#323538]">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
           Special Offers

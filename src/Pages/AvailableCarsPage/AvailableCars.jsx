@@ -44,27 +44,27 @@ const AvailableCars = () => {
     });
 
   return (
-    <div className="p-6 mt-28">
-      <div className="flex justify-between mb-4">
-        <div className="flex gap-2">
+    <div className="p-6 mt-6 py-28 dark:dark:bg-[#323538]">
+      <div className="lg:flex justify-between mb-4">
+        <div className="lg:flex gap-2">
           <input
             type="text"
             placeholder="Search by model or location"
-            className="input input-bordered border-cyan-600 w-full max-w-sm"
+            className="input dark:bg-[#232425] input-bordered border-cyan-600 w-full max-w-sm"
             value={searchQuery}
             onChange={handleSearch}
           />
           <button
-            className="btn bg-[#136b7a] hover:bg-[#232525] text-white"
+            className="px-2 hidden lg:block rounded-md bg-[#136b7a] hover:bg-[#232424] text-white"
             type="submit"
           >
             Search
           </button>
         </div>
 
-        <div>
+        <div className="flex flex-col lg:flex-row space-y-2 mt-2 lg:mt-0 lg:space-y-0">
           <select
-            className="select select-bordered mr-2"
+            className="select select-bordered lg:mr-2 dark:bg-[#232425] dark:text-white "
             value={sortOption}
             onChange={handleSort}
           >
@@ -78,7 +78,7 @@ const AvailableCars = () => {
           </select>
 
           <button
-            className="btn bg-[#136b7a] hover:bg-[#2a2b2d] text-white"
+            className="px-2 py-3 rounded-md bg-[#136b7a] hover:bg-[#2a2b2d] text-white"
             onClick={() => setViewType(viewType === "grid" ? "list" : "grid")}
           >
             {viewType === "grid"
@@ -96,7 +96,10 @@ const AvailableCars = () => {
         }
       >
         {filteredCars.map((car) => (
-          <div key={car._id} className="card bg-gray-100 shadow-md p-4">
+          <div
+            key={car._id}
+            className="card bg-gray-100 dark:bg-[#232425] shadow-md p-4"
+          >
             <div className="overflow-hidden h-48 relative group rounded-t-lg rounded-br-[70px]">
               <img
                 src={car.imageUrl}
@@ -104,12 +107,16 @@ const AvailableCars = () => {
                 className="w-full h-full object-cover mb-4 transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <h3 className="font-bold text-lg">{car.model}</h3>
-            <p>Location: {car.location}</p>
-            <p>Price: ${car.dailyRentalPrice}/day</p>
+            <h3 className="font-bold text-lg dark:text-gray-100">
+              {car.model}
+            </h3>
+            <p className="dark:text-gray-300">Location: {car.location}</p>
+            <p className="dark:text-gray-300">
+              Price: ${car.dailyRentalPrice}/day
+            </p>
             <button
               onClick={() => navigate(`/carDetails/${car._id}`)}
-              className="btn bg-[#136b7a] hover:bg-[#232425] text-white mt-4"
+              className="py-4 rounded-md bg-[#136b7a] hover:bg-[#124f5a] text-white mt-4"
             >
               Book Now
             </button>
