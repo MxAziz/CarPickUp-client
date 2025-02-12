@@ -90,7 +90,7 @@ const handleDelete = async (id) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#323538] dark:text-white py-28 lg:px-7">
       <h1 className="text-2xl md:text-3xl text-center font-bold mb-4">
         My Cars
       </h1>
@@ -112,7 +112,7 @@ const handleDelete = async (id) => {
             </label>
             <select
               id="sort"
-              className="border border-cyan-500 rounded-xl px-2 py-1"
+              className="border border-cyan-500 rounded-xl px-2 py-3 dark:bg-[#232425] "
               onChange={(e) => handleSort(e.target.value)}
             >
               <option disabled value="">
@@ -125,7 +125,7 @@ const handleDelete = async (id) => {
             </select>
           </div>
 
-          <table className="w-full border-collapse border">
+          <table className="w-full border-collapse border ">
             <thead>
               <tr>
                 <th className="border p-2">Car Image</th>
@@ -178,16 +178,16 @@ const handleDelete = async (id) => {
       )}
 
       {selectedCar && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50">
           <form
             onSubmit={handleUpdate}
-            className="bg-white p-6 rounded shadow-lg w-1/2 overflow-y-auto h-3/4"
+            className="bg-white dark:bg-[#232425] dark:text-white p-6 rounded shadow-lg w-1/2 overflow-y-auto h-3/4"
           >
             <h2 className="text-xl font-bold mb-4">Update Car Details</h2>
 
             {/* Car Model */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Car Model
               </label>
               <input
@@ -196,13 +196,13 @@ const handleDelete = async (id) => {
                 onChange={(e) =>
                   setSelectedCar({ ...selectedCar, model: e.target.value })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full dark:bg-[#323538] rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             {/* Daily Rental Price */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Daily Rental Price
               </label>
               <input
@@ -214,13 +214,13 @@ const handleDelete = async (id) => {
                     dailyRentalPrice: e.target.value,
                   })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full rounded dark:bg-[#323538] focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             {/* Availability */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Availability
               </label>
               <select
@@ -231,7 +231,7 @@ const handleDelete = async (id) => {
                     availability: e.target.value === "Available",
                   })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full dark:bg-[#323538] rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
               >
                 <option value="Available">Available</option>
                 <option value="Unavailable">Unavailable</option>
@@ -240,7 +240,7 @@ const handleDelete = async (id) => {
 
             {/* Vehicle Registration Number */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Vehicle Registration Number
               </label>
               <input
@@ -252,13 +252,13 @@ const handleDelete = async (id) => {
                     registrationNumber: e.target.value,
                   })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full rounded dark:bg-[#323538] focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             {/* Features */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Features (e.g., GPS, AC)
               </label>
               <input
@@ -267,13 +267,13 @@ const handleDelete = async (id) => {
                 onChange={(e) =>
                   setSelectedCar({ ...selectedCar, features: e.target.value })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full rounded dark:bg-[#323538] focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             {/* Description */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Description
               </label>
               <textarea
@@ -284,14 +284,14 @@ const handleDelete = async (id) => {
                     description: e.target.value,
                   })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full rounded dark:bg-[#323538] focus:outline-none focus:ring-2 focus:ring-blue-300"
                 rows="3"
               ></textarea>
             </div>
 
             {/* Image URL */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Image URL
               </label>
               <input
@@ -300,13 +300,13 @@ const handleDelete = async (id) => {
                 onChange={(e) =>
                   setSelectedCar({ ...selectedCar, imageUrl: e.target.value })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full rounded dark:bg-[#323538] focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             {/* Location */}
             <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-700 dark:text-gray-100 font-medium mb-2">
                 Location
               </label>
               <input
@@ -315,7 +315,7 @@ const handleDelete = async (id) => {
                 onChange={(e) =>
                   setSelectedCar({ ...selectedCar, location: e.target.value })
                 }
-                className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="border p-2 w-full dark:bg-[#323538] rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
@@ -323,7 +323,7 @@ const handleDelete = async (id) => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                className="bg-blue-500 text-white px-4 py-2 rounded"
               >
                 Save Changes
               </button>
