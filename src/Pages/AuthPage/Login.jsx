@@ -39,38 +39,42 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen mt-[10px]">
+      <div className="hero bg-base-200 dark:bg-[#323538] dark:text-white min-h-screen py-20">
         <div className="hero-content flex-col">
-          <div className="text-4xl font-bold text-center mt-4">Login Now!</div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="text-4xl font-bold text-center dark:text-gray-100 mt-4">
+            Login Now!
+          </div>
+          <div className="card bg-base-100 dark:bg-[#232425] dark:text-white w-full max-w-2xl shrink-0 shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-gray-100">Email</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   // ref={emailRef}
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:bg-[#232425]">
+                    Password
+                  </span>
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
               </div>
               <div className="form-control mt-1">
-                <button className="btn btn-wide btn-neutral text-white">
+                <button className=" py-3 rounded-md btn-wide bg-[#136b7a] hover:bg-[#0e3e46] text-white">
                   Login
                 </button>
               </div>
@@ -78,7 +82,7 @@ const Login = () => {
               <div>
                 <button
                   onClick={handleGoogleSignIn}
-                  className="btn btn-wide btn-neutral text-white"
+                  className=" py-3 rounded-md btn-wide bg-[#136b7a] hover:bg-[#0e3e46] text-white"
                 >
                   Login with Google
                 </button>

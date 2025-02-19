@@ -64,76 +64,78 @@ const Registration = () => {
 
   return (
     <div>
-      <div className="hero bg-base-200 py-8">
+      <div className="hero bg-base-200 dark:bg-[#323538] py-20">
         <div className="hero-content flex-col ">
-          <div className="text-4xl font-bold text-center mb-2 ">
+          <div className="text-4xl font-bold text-center mb-2 dark:text-gray-100">
             Resister Now !
           </div>
-          <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+          <div className="card bg-base-100 dark:dark:bg-[#232425] w-full max-w-md shrink-0 shadow-2xl">
             <form onSubmit={handleSignUp} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text dark:text-gray-100">Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Name"
-                  className="input input-bordered"
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
                 <label className="label">
-                  <span className="label-text">Photo</span>
+                  <span className="label-text dark:text-gray-100">Photo</span>
                 </label>
                 <input
                   type="text"
                   name="photo"
                   placeholder="Photo-URL"
-                  className="input input-bordered"
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-gray-100">Email</span>
                 </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="input input-bordered"
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
               </div>
               <div className="form-control ">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:text-gray-100">
+                    Password
+                  </span>
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="New Password"
-                  className="input input-bordered "
+                  className="input input-bordered dark:bg-[#323538]"
                   required
                 />
               </div>
               <div className="form-control mt-2 ">
-                <button className="btn btn-wide btn-neutral text-white">
+                <button className=" py-3 rounded-md btn-wide bg-[#136b7a] hover:bg-[#104751] text-white">
                   Sign Up
                 </button>
               </div>
-              <div className="divider">OR</div>
+              <div className="divider dark:text-gray-100">OR</div>
               <div className="">
                 <button
                   onClick={handleGoogleSignIn}
-                  className="btn btn-wide btn-neutral text-white"
+                  className="py-3 rounded-md  btn-wide bg-[#136b7a] hover:bg-[#104751] text-white"
                 >
                   Sign up with Google
                 </button>
               </div>
               <div className="">
-                <p>
+                <p className="dark:text-gray-100">
                   Already have an account ?{" "}
                   <NavLink
-                    className="text-lg font-bold text-[#7b1a5f]"
+                    className="text-lg font-bold text-[#136b7a]"
                     to={"/login"}
                   >
                     Login

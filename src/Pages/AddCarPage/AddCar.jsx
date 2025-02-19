@@ -51,7 +51,7 @@ const AddCar = () => {
 
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-[#323538] py-28">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-[#323538] pb-20 lg:pt-32">
       <form
         onSubmit={handleAddCar}
         className="p-8 bg-white shadow-lg rounded-lg w-full max-w-xl dark:bg-[#232425] dark:text-white"
@@ -91,7 +91,7 @@ const AddCar = () => {
 
         <button
           type="submit"
-          className=" py-3 rounded-md bg-[#136b7a] hover:bg-[#3b3e3e] text-white text-lg  w-full"
+          className=" py-3 rounded-md bg-[#136472] hover:bg-[#3b3e3e] text-white text-lg  w-full"
         >
           Submit
         </button>
