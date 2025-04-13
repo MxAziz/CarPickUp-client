@@ -119,7 +119,7 @@ const MyBookings = () => {
 
   return (
     <div className="container p-3 lg:p-6 dark:bg-[#323538]  lg:py-8 ">
-      <h2 className="text-2xl text-center font-bold mb-4 dark:text-gray-100 pt-28 pb-8">
+      <h2 className="text-2xl text-center font-bold mb-4 dark:text-gray-100 pt-28 pb-2">
         My Bookings
       </h2>
 

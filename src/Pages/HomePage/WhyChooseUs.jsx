@@ -12,6 +12,7 @@ const WhyChooseUs = () => {
       icon: <FaCar className="text-4xl text-blue-500 mx-auto" />,
       title: "Wide Variety of Cars",
       color: "bg-[#E7C1D3] ",
+      darkBg: "bg-[#4A2545]",
       description:
         "From budget-friendly options to luxury vehicles, we have it all.",
     },
@@ -46,7 +47,7 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`p-6 ${feature.color} rounded-lg shadow-md text-center transform  hover:scale-105 transition-transform duration-300`}
+              className={`p-6 ${feature.color} dark:${feature.darkBg}  rounded-lg shadow-md text-center transform  hover:scale-105 transition-transform duration-300`}
             >
               <div className="mb-4 ">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
