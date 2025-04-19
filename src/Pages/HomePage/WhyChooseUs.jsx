@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
       icon: <FaCar className="text-4xl text-blue-500 mx-auto" />,
       title: "Wide Variety of Cars",
       color: "bg-[#E7C1D3] ",
-      darkBg: "bg-[#4A2545]",
+      // darkBg: "bg-[#4A2545]",
       description:
         "From budget-friendly options to luxury vehicles, we have it all.",
     },

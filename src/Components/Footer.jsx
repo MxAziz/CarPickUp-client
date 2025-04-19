@@ -1,65 +1,76 @@
 import React from 'react';
+import { FaLocationDot } from 'react-icons/fa6';
+import { FiPhoneCall } from 'react-icons/fi';
+import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
     return (
       <div className="">
-        <footer className="footer footer-center bg-[#232425] text-white p-8">
-          <aside>
-            <img
-              className=" size-24 bg-white rounded-full"
-              src="/Car-Logo.png"
-              alt=""
-            />
-            <div className=" space-y-2">
-              <p className="font-bold text-3xl">CarPickUp</p>
-              <p className='text-base'>
-                CarPickUp aims to elevate the car rental experience by
-                integrating modern technologies with innovative design, <br /> ensuring
-                reliability and user satisfaction at every step.
-              </p>
-              <p className=''>Copyright © {new Date().getFullYear()} - All right reserved</p>
+        <footer className="bg-[#232425] text-white py-20">
+          {/* top contact section */}
+          <div className="flex  flex-col lg:flex-row justify-between items-center mb-8 border border-black w-11/12 mx-auto px-14 py-4 rounded-lg">
+
+            <div className="flex gap-4 items-center justify-center mb-4">
+              <div className="p-6 rounded-full bg-[#136b7a] text-white">
+                <FiPhoneCall className=" size-6" />
+              </div>
+              <div className="">
+                <h3>Call us</h3>
+                <p>+880 123456789</p>
+              </div>
             </div>
-          </aside>
-          <nav>
-            <div className="grid grid-flow-col gap-4">
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
-                >
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
-                >
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
-                >
-                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
-              </a>
+
+            <div className="flex gap-4 items-center justify-center mb-4">
+              <div className="p-6 rounded-full bg-[#136b7a] text-white">
+                <MdEmail className=" size-6" />
+              </div>
+              <div className="">
+                <h3>Write to us</h3>
+                <p>info@carpickup.com</p>
+              </div>
             </div>
-          </nav>
+
+            <div className="flex gap-4 items-center justify-center mb-4">
+              <div className="p-6 rounded-full bg-[#136b7a] text-white">
+                <FaLocationDot className=" size-6" />
+              </div>
+              <div className="">
+                <h3>Address</h3>
+                <p>Rajshahi, City Center, Office 123</p>
+              </div>
+            </div>
+          </div>
+
+          {/* footer main content */}
+          <div className="">
+            {/* left */}
+            <div className="">
+              <h3 className=' font-bold text-3xl'>CARPICKUP</h3>
+              <small className='text-base'>
+               A simple and user-friendly car rental system to book, manage, and track vehicles online.
+              </small>
+            </div>
+            {/* middle */}
+            <div className=""></div>
+            {/* right */}
+            <div className=""></div>
+          </div>
         </footer>
       </div>
     );
 };
 
 export default Footer;
+
+
+/*
+<div className=" space-y-2">
+              <p className="font-bold text-3xl">CARPICKUP</p>
+              <p className='text-base'>
+                CarPickUp aims to elevate the car rental experience by
+                integrating modern technologies with innovative design, <br /> ensuring
+                reliability and user satisfaction at every step.
+              </p>
+              <p className=''>Copyright © {new Date().getFullYear()} - All rights reserved</p>
+            </div>
+ */
