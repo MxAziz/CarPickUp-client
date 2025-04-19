@@ -9,7 +9,6 @@ const Footer = () => {
         <footer className="bg-[#232425] text-white py-20">
           {/* top contact section */}
           <div className="flex  flex-col lg:flex-row justify-between items-center mb-8 border border-black w-11/12 mx-auto px-14 py-4 rounded-lg">
-
             <div className="flex gap-4 items-center justify-center mb-4">
               <div className="p-6 rounded-full bg-[#136b7a] text-white">
                 <FiPhoneCall className=" size-6" />
@@ -45,10 +44,14 @@ const Footer = () => {
           <div className="">
             {/* left */}
             <div className="">
-              <h3 className=' font-bold text-3xl'>CARPICKUP</h3>
-              <small className='text-base'>
-               A simple and user-friendly car rental system to book, manage, and track vehicles online.
+              <h3 className=" font-bold text-3xl">CARPICKUP</h3>
+              <small className="text-base">
+                A simple and user-friendly car rental system to book, manage,
+                and track vehicles online.
               </small>
+              <small>©MxAziz{new Date().getFullYear()} | All Rights Reserved</small>
+              {/* social buttons */}
+              <div className=""></div>
             </div>
             {/* middle */}
             <div className=""></div>
@@ -61,16 +64,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-/*
-<div className=" space-y-2">
-              <p className="font-bold text-3xl">CARPICKUP</p>
-              <p className='text-base'>
-                CarPickUp aims to elevate the car rental experience by
-                integrating modern technologies with innovative design, <br /> ensuring
-                reliability and user satisfaction at every step.
-              </p>
-              <p className=''>Copyright © {new Date().getFullYear()} - All rights reserved</p>
-            </div>
- */
