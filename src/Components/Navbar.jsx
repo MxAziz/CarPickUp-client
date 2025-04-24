@@ -4,6 +4,8 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useState, useEffect } from "react";
 import ThemeToggle from './ThemeToggle';
+import { SiSecurityscorecard } from 'react-icons/si';
+import { FaCar } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -97,7 +99,8 @@ const Navbar = () => {
           </div>
           <a href="/" className="btn btn-ghost text-xl">
             {/* <img className="size-14  " src="/Car-Logo.png" alt="" /> */}
-            <span className="font-bold">CARPICKUP</span>
+            <FaCar className=' size-6'></FaCar>
+            <p className="font-bold"><span className=' text-[#4dd2ea]'>CAR</span>PICKUP</p>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
