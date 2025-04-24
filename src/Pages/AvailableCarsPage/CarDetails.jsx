@@ -84,13 +84,13 @@ const CarDetails = () => {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="modal-content bg-white p-8 rounded-xl shadow-lg">
+          <div className="modal-content bg-white dark:bg-[#323538] dark:text-white p-8 rounded-xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">Booking Confirmation</h3>
             <p className="mb-2">Car: {car.model}</p>
             <p className="mb-2">Price per Day: ${car.dailyRentalPrice}</p>
             <div className="flex justify-center mt-4">
               <button
-                className="btn btn-secondary mr-2"
+                className="btn bg-red-600 text-white hover:bg-red-800 mr-2"
                 onClick={() => setShowModal(false)}
               >
                 Cancel
