@@ -57,7 +57,7 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="container bg-gray-100 p-6">
+    <div className="container bg-gray-100 dark:bg-[#323538] p-6 py-16 md:py-28 ">
       <div className="card shadow-lg md:w-3/5 mx-auto bg-white p-6">
         <img
           src={car.imageUrl}
