@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaCar, FaFacebookF, FaYoutube } from 'react-icons/fa';
 import {  FaLocationDot, FaWhatsapp } from 'react-icons/fa6';
 import { FiPhoneCall } from 'react-icons/fi';
 import { MdEmail } from 'react-icons/md';
@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
       <div className="">
-        <footer className="bg-[#232425] text-white md:py-16">
+        <footer className="bg-[#232425] text-white py-12 md:py-16">
           {/* top contact section */}
-          <div className="flex flex-col lg:flex-row lg:justify-between items-start mb-8 border border-black w-11/12 mx-auto px-4 py-4 rounded-lg gap-6">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-start mb-8 border border-black w-[95%] mx-auto px-8 py-4 rounded-lg gap-6">
             <div className="flex gap-4 items-start">
               <div className="p-6 rounded-full bg-[#136b7a] text-white">
                 <FiPhoneCall className="size-6" />
@@ -48,8 +48,9 @@ const Footer = () => {
               <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Brand Info */}
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold">
-                    <span className=" text-[#136b7a]">CAR</span>PICKUP
+                <h2 className="text-2xl font-bold flex items-center">
+                  <FaCar className=' size-8 mr-2'></FaCar>
+                    <span className=" text-[#3ddbf7]">CAR</span>PICKUP
                   </h2>
                   <p className="text-gray-400">
                     A simple and user-friendly car rental system to book,

@@ -4,6 +4,7 @@ import WhyChooseUs from "./WhyChooseUs";
 import SpecialOffers from "./SpecialOffers";
 import Testimonials from "./Testimonials";
 import RecentListings from "./RecentListings";
+import HowItWorks from './HowItWorks';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner></Banner>
       <WhyChooseUs></WhyChooseUs>
       <RecentListings></RecentListings>
+      <HowItWorks></HowItWorks>
       {/* testimonial section start here */}
       <div
         className="bg-fixed  w-full  bg-cover bg-center"
