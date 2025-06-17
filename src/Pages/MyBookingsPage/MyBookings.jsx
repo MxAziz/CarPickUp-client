@@ -210,7 +210,7 @@ const MyBookings = () => {
       )}
 
       {/* Booking Statistics */}
-      <div className="my-16 dark:text-white ">
+      <div className="my-24 dark:text-white ">
         <h3 className="text-xl font-bold mb-4 text-center dark:text-gray-100">
           Booking Statistics
         </h3>

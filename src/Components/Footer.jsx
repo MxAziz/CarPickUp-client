@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="">
         <footer className="bg-[#232425] text-white py-12 md:py-16">
           {/* top contact section */}
-          <div className="flex flex-col lg:flex-row lg:justify-between items-start mb-8 border border-black w-[95%] mx-auto px-8 py-4 rounded-lg gap-6">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-start mb-8 border border-[#136b7a] w-[95%] mx-auto px-8 py-4 rounded-lg gap-6">
             <div className="flex gap-4 items-start">
               <div className="p-6 rounded-full bg-[#136b7a] text-white">
                 <FiPhoneCall className="size-6" />
@@ -139,7 +139,7 @@ const Footer = () => {
               </div>
 
               {/* Copyright */}
-              <div className="border-t border-black mt-8 pt-8 text-center text-gray-400">
+              <div className="border-t border-[#136b7a] mt-8 pt-8 text-center text-gray-400">
                 <p>
                   © {new Date().getFullYear()} CARPICKUP. All rights reserved.
                 </p>
