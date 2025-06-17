@@ -126,14 +126,14 @@ const MyBookings = () => {
       {/* Booking Table */}
       <div className=" overflow-x-auto">
         <table className="table-auto w-full border-collapse border bg-white  shadow-lg">
-          <thead>
+          <thead className="bg-[#136b7a] text-white">
             <tr>
-              <th className="border p-2 bg-cyan-500">Car Image</th>
-              <th className="border p-2 bg-cyan-500">Car Model</th>
-              <th className="border p-2 bg-cyan-500">Booking Date</th>
-              <th className="border p-2 bg-cyan-500">Total Price</th>
-              <th className="border p-2 bg-cyan-500">Status</th>
-              <th className="border p-2 bg-cyan-500">Actions</th>
+              <th className="border p-2 ">Car Image</th>
+              <th className="border p-2 ">Car Model</th>
+              <th className="border p-2 ">Booking Date</th>
+              <th className="border p-2 ">Total Price</th>
+              <th className="border p-2 ">Status</th>
+              <th className="border p-2 ">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -155,7 +155,7 @@ const MyBookings = () => {
                 </td>
                 <td className="border p-2">{booking.model}</td>
                 <td className="border p-2">
-                  {new Date(booking.bookingDate).toLocaleString()}
+                  {new Date(booking.bookingDate).toISOString()}
                 </td>
                 <td className="border p-2">${booking.dailyRentalPrice}</td>
                 <td className="border p-2">{booking.status}</td>
