@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { FaCar } from "react-icons/fa";
-// import { getNavLinkClass } from "../utils/navLinkClass";
+
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -39,33 +39,41 @@ const Navbar = () => {
         console.log("ERROR:", error);
       });
   };
+
+  // navbar active link class
+  const handleActive = ({ isActive }) =>
+  isActive
+    ? "!text-white !bg-[#136b7a] !font-bold"
+    : " hover:!bg-none";
+
+
   // navbar links
   const links = (
     <>
       <li>
-        <NavLink to={"/"} >
+        <NavLink to={"/"} end className={handleActive}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/availableCars"} >
+        <NavLink to={"/availableCars"} className={handleActive} >
           Available Cars
         </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to={"/addCar"} >
+            <NavLink to={"/addCar"} className={handleActive} >
               Add Car
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/myCars"} >
+            <NavLink to={"/myCars"} className={handleActive} >
               My Cars
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/myBookings"}>
+            <NavLink to={"/myBookings"} className={handleActive} >
               My Bookings
             </NavLink>
           </li>
@@ -106,16 +114,18 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a href="/" className="btn btn-ghost text-xl">
+          <Link href="/" className="btn btn-ghost text-xl">
             {/* <img className="size-14  " src="/Car-Logo.png" alt="" /> */}
             <FaCar className=" size-6"></FaCar>
             <p className="font-bold">
               <span className=" text-[#4dd2ea]">CAR</span>PICKUP
             </p>
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1">
+            {links}
+          </ul>
         </div>
         {/* authentication condition */}
         <div className="navbar-end mr-4 flex gap-4">
