@@ -1,64 +1,73 @@
-import React, { useContext } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Provider/AuthProvider';
-import { toast } from 'react-toastify';
+import { useContext } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
-import ThemeToggle from './ThemeToggle';
-import { SiSecurityscorecard } from 'react-icons/si';
-import { FaCar } from 'react-icons/fa';
+import ThemeToggle from "./ThemeToggle";
+import { FaCar } from "react-icons/fa";
+// import { getNavLinkClass } from "../utils/navLinkClass";
 
 const Navbar = () => {
-    const { user, signOutUser } = useContext(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setScrolled(true);
+      return;
+    }
 
-    useEffect(() => {
-      if (location.pathname !== "/") {
-        setScrolled(true);
-        return;
-      }
-
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 50);
-      };
-
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, [location.pathname]);
-
-    const handleLogOut = () => {
-      signOutUser()
-        .then(() => {
-          navigate("/");
-          toast.success("Sign out successful");
-        })
-        .catch((error) => {
-          console.log("ERROR:", error);
-        });
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname]);
+
+  const handleLogOut = () => {
+    signOutUser()
+      .then(() => {
+        navigate("/");
+        toast.success("Sign out successful");
+      })
+      .catch((error) => {
+        console.log("ERROR:", error);
+      });
+  };
   // navbar links
   const links = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/"} >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/availableCars"}>Available Cars</NavLink>
+        <NavLink to={"/availableCars"} >
+          Available Cars
+        </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to={"/addCar"}> Add Car</NavLink>
+            <NavLink to={"/addCar"} >
+              Add Car
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/myCars"}>My Cars</NavLink>
+            <NavLink to={"/myCars"} >
+              My Cars
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/myBookings"}> My Bookings</NavLink>
+            <NavLink to={"/myBookings"}>
+              My Bookings
+            </NavLink>
           </li>
         </>
       )}
@@ -99,8 +108,10 @@ const Navbar = () => {
           </div>
           <a href="/" className="btn btn-ghost text-xl">
             {/* <img className="size-14  " src="/Car-Logo.png" alt="" /> */}
-            <FaCar className=' size-6'></FaCar>
-            <p className="font-bold"><span className=' text-[#4dd2ea]'>CAR</span>PICKUP</p>
+            <FaCar className=" size-6"></FaCar>
+            <p className="font-bold">
+              <span className=" text-[#4dd2ea]">CAR</span>PICKUP
+            </p>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
