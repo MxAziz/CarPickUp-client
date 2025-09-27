@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AvailableCars = () => {
@@ -55,7 +55,7 @@ const AvailableCars = () => {
             onChange={handleSearch}
           />
           <button
-            className="px-2 hidden lg:block rounded-md bg-[#136b7a] hover:bg-[#232424] text-white"
+            className="px-6 hidden lg:block rounded-md bg-[#136b7a] hover:bg-[#232424] text-white"
             type="submit"
           >
             Search
@@ -64,7 +64,7 @@ const AvailableCars = () => {
 
         <div className="flex flex-col lg:flex-row space-y-2 mt-2 lg:mt-0 lg:space-y-0">
           <select
-            className="select select-bordered lg:mr-2 dark:bg-[#232425] dark:text-white "
+            className="select select-bordered border-cyan-600 lg:mr-2 dark:bg-[#232425] dark:text-white "
             value={sortOption}
             onChange={handleSort}
           >
@@ -88,6 +88,7 @@ const AvailableCars = () => {
         </div>
       </div>
 
+      {/* Car List/Grid View */}
       <div
         className={
           viewType === "grid"
@@ -116,7 +117,7 @@ const AvailableCars = () => {
             </p>
             <button
               onClick={() => navigate(`/carDetails/${car._id}`)}
-              className="py-4 rounded-md bg-[#136b7a] hover:bg-[#124f5a] text-white mt-4"
+              className="py-4 rounded-lg bg-[#136b7a] hover:bg-[#124f5a] text-white mt-4"
             >
               Book Now
             </button>
