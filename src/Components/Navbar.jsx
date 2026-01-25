@@ -60,6 +60,9 @@ const Navbar = () => {
           Available Cars
         </NavLink>
       </li>
+
+      {!user && (
+        <>
       <li>
         <NavLink to={"/about"} className={handleActive}>
           About Us
@@ -70,6 +73,8 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+        </>
+      )}
       {user && (
         <>
           <li>
