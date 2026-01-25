@@ -56,24 +56,34 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/availableCars"} className={handleActive} >
+        <NavLink to={"/availableCars"} className={handleActive}>
           Available Cars
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/about"} className={handleActive}>
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={"/contact"} className={handleActive}>
+          Contact
         </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to={"/addCar"} className={handleActive} >
+            <NavLink to={"/addCar"} className={handleActive}>
               Add Car
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/myCars"} className={handleActive} >
+            <NavLink to={"/myCars"} className={handleActive}>
               My Cars
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/myBookings"} className={handleActive} >
+            <NavLink to={"/myBookings"} className={handleActive}>
               My Bookings
             </NavLink>
           </li>

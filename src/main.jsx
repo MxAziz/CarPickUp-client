@@ -16,6 +16,7 @@ import MyCars from './Pages/MyCarsPage/MyCars.jsx';
 import MyBookings from './Pages/MyBookingsPage/MyBookings.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import CarDetails from './Pages/AvailableCarsPage/CarDetails.jsx';
+import About from './Pages/AboutPage/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/availableCars",
         element: <AvailableCars></AvailableCars>,
+      },
+      {
+        path: "/about",
+        element: <About></About>
       },
       {
         path: "/carDetails/:id",
