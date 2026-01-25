@@ -63,16 +63,16 @@ const Navbar = () => {
 
       {!user && (
         <>
-      <li>
-        <NavLink to={"/about"} className={handleActive}>
-          About Us
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={"/contact"} className={handleActive}>
-          Contact
-        </NavLink>
-      </li>
+          <li>
+            <NavLink to={"/about"} className={handleActive}>
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"} className={handleActive}>
+              Contact
+            </NavLink>
+          </li>
         </>
       )}
       {user && (
@@ -90,6 +90,11 @@ const Navbar = () => {
           <li>
             <NavLink to={"/myBookings"} className={handleActive}>
               My Bookings
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"} className={handleActive}>
+              Contact
             </NavLink>
           </li>
         </>
