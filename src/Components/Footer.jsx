@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaCar, FaFacebookF, FaYoutube } from 'react-icons/fa';
 import {  FaLocationDot, FaWhatsapp } from 'react-icons/fa6';
 import { FiPhoneCall } from 'react-icons/fi';
