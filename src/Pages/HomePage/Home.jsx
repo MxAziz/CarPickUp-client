@@ -5,6 +5,7 @@ import SpecialOffers from "./SpecialOffers";
 import Testimonials from "./Testimonials";
 import RecentListings from "./RecentListings";
 import HowItWorks from './HowItWorks';
+import Blogs from "./Blogs";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       </div>
 
       <SpecialOffers></SpecialOffers>
+      <Blogs></Blogs>
     </div>
   );
 };
