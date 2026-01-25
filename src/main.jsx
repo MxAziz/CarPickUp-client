@@ -17,6 +17,7 @@ import MyBookings from './Pages/MyBookingsPage/MyBookings.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import CarDetails from './Pages/AvailableCarsPage/CarDetails.jsx';
 import About from './Pages/AboutPage/About.jsx';
+import Contact from './Pages/ContactPage/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       },
       {
         path: "/carDetails/:id",
